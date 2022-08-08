@@ -7,7 +7,7 @@
 
 	<nav>
 		<div>
-			<a href="https://kit.svelte.dev">
+			<a href="/">
 				<!-- <img src={logo} alt="SvelteKit" /> -->
 				Cody Griffith
 			</a>
