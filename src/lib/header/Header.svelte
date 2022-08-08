@@ -6,7 +6,8 @@
 <header>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+			<!-- <img src={logo} alt="SvelteKit" /> -->
+			Cody Griffith
 		</a>
 	</div>
 
@@ -37,6 +38,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		background-color: black;
 	}
 
 	.corner {
@@ -46,10 +48,17 @@
 
 	.corner a {
 		display: flex;
+		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: max-content;
+		color: var(--heading-color);
+		font-size: 1.5rem;
 		height: 100%;
+		font-weight: 700;
+		text-decoration: none;
+		transition: color 0.2s linear;
+
 	}
 
 	.corner img {
@@ -61,7 +70,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: black;
 	}
 
 	svg {
@@ -106,12 +115,13 @@
 
 	nav a {
 		display: flex;
+		flex-direction: row;
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
 		color: var(--heading-color);
 		font-weight: 700;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
