@@ -4,29 +4,27 @@
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<!-- <img src={logo} alt="SvelteKit" /> -->
-			Cody Griffith
-		</a>
-	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
-			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		<div>
+			<a href="https://kit.svelte.dev">
+				<!-- <img src={logo} alt="SvelteKit" /> -->
+				Cody Griffith
+			</a>
+		</div>
+		<div>
+			
+			<ul>
+				<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+				<li class:active={$page.url.pathname === '/about'}>
+					<a sveltekit:prefetch href="/about">About</a>
+				</li>
+				<li class:active={$page.url.pathname === '/todos'}>
+					<a sveltekit:prefetch href="/todos">Todos</a>
+				</li>
+			</ul>
+			
+		</div>
 	</nav>
 
 	<div class="corner">
@@ -37,7 +35,7 @@
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		background-color: black;
 	}
 
@@ -69,8 +67,9 @@
 
 	nav {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		--background: black;
+		width: 80%;
 	}
 
 	svg {
@@ -99,18 +98,19 @@
 	li {
 		position: relative;
 		height: 100%;
+		margin: 1em;
 	}
 
 	li.active::before {
-		--size: 6px;
+		--size: 1px;
 		content: '';
-		width: 0;
+		width: 95%;
 		height: 0;
 		position: absolute;
 		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+		/* left: calc(50% - var(--size)); */
+		/* border: var(--size) solid transparent; */
+		border: var(--size) solid var(--accent-color);
 	}
 
 	nav a {
@@ -118,7 +118,7 @@
 		flex-direction: row;
 		height: 100%;
 		align-items: center;
-		padding: 0 1em;
+		/* margin: 0 1em; */
 		color: var(--heading-color);
 		font-weight: 700;
 		font-size: 1rem;
