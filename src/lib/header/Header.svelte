@@ -37,6 +37,9 @@
 		display: flex;
 		justify-content: center;
 		background-color: black;
+		position: absolute;
+		width: 100%;
+		z-index: 200;
 	}
 
 	.corner {
@@ -68,8 +71,10 @@
 	nav {
 		display: flex;
 		justify-content: space-between;
-		--background: black;
+		/* --background: black; */
 		width: 80%;
+		z-index: 200;
+		position: absolute;
 	}
 
 	svg {
