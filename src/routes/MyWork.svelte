@@ -14,8 +14,8 @@
 	let bottom = 0.9;
 </script>
 
-<section>
-    <h1>Hello</h1>
+<section class="main">
+    <h1>My Projects</h1>
     <Scroller
     {top}
     {threshold}
@@ -39,9 +39,6 @@
     <div slot="foreground">
         <section>section 1</section>
         <section>section 2</section>
-        <section>section 3</section>
-        <section>section 4</section>
-        <section>section 5</section>
     </div>
 </Scroller>
 </section>
@@ -55,7 +52,7 @@
 		flex: 1;
 		position: relative;
 		/* height: 100vh; */
-        background-color: rgba(0, 0, 0, 0.705);
+        /* background-color: rgba(0, 0, 0, 0.705); */
 	}
 
     section div {
@@ -64,13 +61,26 @@
 
     [slot="background"]{
         border: none !important;
+        background: none !important;
     }
 
     :global(svelte-scroller-outer) {
 		width: 100%;
 	}
 
-    
+    :global(svelte-scroller-background-container) {
+        z-index: 100 !important;
+    }
+
+    :global(svelte-scroller-background) {
+        height: 80vh !important;
+        display: flex !important;
+        align-items: center;
+    }
+
+    .main{
+        background-color: rgba(0, 0, 0, 0.705);
+    }
 
 	h1 {
 		width: 100%;
@@ -148,16 +158,18 @@
 	}
 	
 	[slot="background"] {
-		background-color: rgba(255,62,0,0.05);
+		/* background-color: rgba(255,62,0,0.05); */
 		border-top: 2px solid #ff3e00;
 		border-bottom: 2px solid #ff3e00;
 		font-size: 1.4em;
 		overflow: hidden;
 		padding: 1em;
+        z-index: 100;
 	}
 	
 	[slot="background"] p {
 		margin: 0;
+        z-index: 100;
 	}
 	
 	[slot="foreground"] {
@@ -170,7 +182,6 @@
 	
 	section {
 		height: 80vh;
-        background-color: rgba(0, 0, 0, 0.705);
 		color: white;
 		padding: 1em;
 		margin: 0 0 2em 0;
