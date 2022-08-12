@@ -21,7 +21,7 @@
 		width: 100%;
 		box-sizing: border-box;
 		position: relative;
-		height: 100vh;
+		/* height: 100vh; */
 	}
 
 	footer {

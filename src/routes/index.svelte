@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+  import MyWork from './MyWork.svelte';
+
 	import Counter from "$lib/Counter.svelte";
 	import Particles from "svelte-particles";
 	import { loadFull } from "tsparticles";
@@ -10,169 +12,141 @@
 	let particlesUrl = "http://foo.bar/particles.json";
 
 	let particlesConfig = {
-		background: {
-			// "color": {
-			//   "value": "#000000"
-			// },
-			position: "50% 50%",
-			repeat: "no-repeat",
-			size: "cover",
-		},
-		interactivity: {
-			events: {
-				onClick: {
-					enable: true,
-					mode: "push",
-				},
-				onHover: {
-					mode: "repulse",
-				},
-			},
-			modes: {
-				bubble: {
-					distance: 400,
-					duration: 2,
-					opacity: 0.8,
-					size: 40,
-					divs: {
-						distance: 200,
-						duration: 0.4,
-						mix: false,
-						selectors: [],
-					},
-				},
-				grab: {
-					distance: 400,
-				},
-				push: {
-					groups: ["z5000", "z7500", "z2500", "z1000"],
-				},
-				repulse: {
-					divs: {
-						distance: 200,
-						duration: 0.4,
-						factor: 100,
-						speed: 1,
-						maxSpeed: 50,
-						easing: "ease-out-quad",
-						selectors: [],
-					},
-				},
-			},
-		},
-		particles: {
-			color: {
-				animation: {
-					h: {
-						speed: 10,
-					},
-				},
-			},
-			groups: {
-				z5000: {
-					number: {
-						value: 70,
-					},
-					zIndex: {
-						value: 50,
-					},
-				},
-				z7500: {
-					number: {
-						value: 30,
-					},
-					zIndex: {
-						value: 75,
-					},
-				},
-				z2500: {
-					number: {
-						value: 50,
-					},
-					zIndex: {
-						value: 25,
-					},
-				},
-				z1000: {
-					number: {
-						value: 40,
-					},
-					zIndex: {
-						value: 10,
-					},
-				},
-			},
-			links: {
-				color: {
-					value: "#ffffff",
-				},
-				opacity: 0.4,
-			},
-			move: {
-				angle: {
-					value: 10,
-				},
-				attract: {
-					rotate: {
-						x: 600,
-						y: 1200,
-					},
-				},
-				direction: "top",
-				enable: true,
-				gravity: {
-					acceleration: 0.81,
-				},
-				path: {},
-				outModes: {
-					bottom: "out",
-					left: "out",
-					right: "out",
-					top: "out",
-				},
-				spin: {},
-			},
-			number: {
-				value: 100,
-			},
-			opacity: {
-				animation: {
-					speed: 1,
-					minimumValue: 0.1,
-				},
-			},
-			size: {
-				animation: {},
-			},
-			zIndex: {
-				value: 5,
-				opacityRate: 0.5,
-			},
-		},
-		emitters: {
-			autoPlay: true,
-			fill: true,
-			life: {
-				wait: false,
-			},
-			rate: {
-				quantity: 3,
-				delay: 7,
-			},
-			shape: "square",
-			startCount: 0,
-			size: {
-				mode: "percent",
-				height: 0,
-				width: 0,
-			},
-
-			position: {
-				x: -5,
-				y: 55,
-			},
-		},
-	};
+  "interactivity": {
+    "events": {
+      "onClick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "onHover": {
+        "mode": "repulse"
+      }
+    },
+    "modes": {
+      "bubble": {
+        "distance": 400,
+        "duration": 2,
+        "opacity": 0.8,
+        "size": 40,
+        "divs": {
+          "distance": 200,
+          "duration": 0.4,
+          "mix": false,
+          "selectors": []
+        }
+      },
+      "grab": {
+        "distance": 400
+      },
+      "push": {
+        "groups": [
+          "z5000",
+          "z7500",
+          "z2500",
+          "z1000"
+        ]
+      },
+      "repulse": {
+        "divs": {
+          "distance": 200,
+          "duration": 0.4,
+          "factor": 100,
+          "speed": 1,
+          "maxSpeed": 50,
+          "easing": "ease-out-quad",
+          "selectors": []
+        }
+      }
+    }
+  },
+  "particles": {
+    "color": {
+      "animation": {
+        "h": {
+          "speed": 20
+        }
+      }
+    },
+    "groups": {
+      "z5000": {
+        "number": {
+          "value": 70
+        },
+        "zIndex": {
+          "value": 50
+        }
+      },
+      "z7500": {
+        "number": {
+          "value": 30
+        },
+        "zIndex": {
+          "value": 75
+        }
+      },
+      "z2500": {
+        "number": {
+          "value": 50
+        },
+        "zIndex": {
+          "value": 25
+        }
+      },
+      "z1000": {
+        "number": {
+          "value": 40
+        },
+        "zIndex": {
+          "value": 10
+        }
+      }
+    },
+    "links": {
+      "color": {
+        "value": "#ffffff"
+      },
+      "opacity": 0.4
+    },
+    "move": {
+      "angle": {
+        "value": 10
+      },
+      "attract": {
+        "rotate": {
+          "x": 600,
+          "y": 1200
+        }
+      },
+      "direction": "top",
+      "enable": true,
+      "path": {},
+      "outModes": {
+        "bottom": "out",
+        "left": "out",
+        "right": "out",
+        "top": "out"
+      },
+      "speed": 1,
+      "spin": {}
+    },
+    "number": {
+      "value": 100
+    },
+    "opacity": {
+      "animation": {
+        "speed": 3,
+        "minimumValue": 0.1
+      }
+    },
+    "size": {
+      "animation": {}
+    },
+    "zIndex": {
+      "value": 5,
+      "opacityRate": 0.5
+    }
+  }
+};
 
 	let onParticlesLoaded = (event) => {
 		const particlesContainer = event.detail.particles;
@@ -201,6 +175,7 @@
 	<div class="welcome">
 		<img src="hopeful_headshot-cutout.png" alt="Welcome" />
 
+
 		
 		<!-- <Counter /> -->
 		<h2>
@@ -219,9 +194,7 @@
 			{particlesInit}
 		/>
 
-<section>
-	<p>Hello</p>
-</section>
+<MyWork/>
 
 <style>
 	section {
@@ -248,7 +221,7 @@
 		/* position: relative; */
 		/* width: 100%; */
 		padding-top: 5%;
-		height: 100vh;
+		height: 95vh;
 		padding-top: 2.5vw;
 		display: flex;
 		flex-direction: column;
