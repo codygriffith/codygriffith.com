@@ -173,7 +173,7 @@
 		
 
 	<div class="welcome">
-		<img src="hopeful_headshot-cutout.png" alt="Welcome" />
+		<img src="hopeful_headshot.png" alt="Welcome" />
 
 
 		
