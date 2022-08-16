@@ -16,13 +16,16 @@
 	let bottom = 0.9;
 
 	let items = [
-		{ name: "Contidly", url: "https://contidly.com" },
-		{ name: "Pathlight", url: "https://pathlight.dev" },
+		{ name: "Contidly", url: "https://contidly.com", summary: "Saas webapp for automatically qualifying leads and tracking interactions." },
+		{ name: "Pathlight", url: "https://pathlight.dev", summary: "Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results." },
 	];
+
+	import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
+
 </script>
 
-<section class="main">
-	<h1>My Projects</h1>
+<section class="main" id="myWork" use:scrollRef={'myWork'}>
+	<h1 class="title">My Projects</h1>
 	<Scroller
 		{top}
 		{threshold}
@@ -50,8 +53,10 @@
 					{#if i <= index && count != 0}
 						<div class="textual" transition:slide|local="{{ duration: 2000 }}">
 							<h1>{item.name}</h1>
+							<p class="summary">{item.summary}</p>
+							<!-- <p>{i}</p> -->
+
 							<!-- content here -->
-							<p>{i}</p>
 						</div>
 					{/if}
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
@@ -62,7 +67,7 @@
 							height="84%"
 							style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);"
 						/>
-						<img src="laptop-png.png" alt="" />
+						<img src="laptop-png-grey.png" alt="" />
 					</div>
 					<div class="mobile_render">
 						<iframe
@@ -90,6 +95,14 @@
 		overflow: hidden;
 		/* height: 100vh; */
 		/* background-color: rgba(0, 0, 0, 0.705); */
+	}
+
+	.main .title {
+		/* background-color: black; */
+	}
+
+	.textual .summary {
+		font-size: 1vw;
 	}
 
 	section div {
@@ -125,13 +138,17 @@
 
 	.textual {
 		position: absolute;
-		margin-left: 10%;
+		margin-left: 5%;
 		left: 0;
 		width: 40% !important;
+		margin-top: -5vw;
+		/* text-shadow: #ff3e00 .1vw .1vw; */
 	}
 
 	.textual h1 {
-		font-size: 2.5vw;
+		font-size: 2vw;
+		margin-block-start: 0;
+		margin-block-end: 0;
 	}
 
 	.desktop_render img {
@@ -253,6 +270,7 @@
 
 	[slot="foreground"] {
 		pointer-events: none;
+
 	}
 
 	[slot="foreground"] .textual {
@@ -266,6 +284,7 @@
 
 	[slot="foreground"] section {
 		pointer-events: all;
+		background: #1c1c1c23;
 	}
 
 	[slot="foreground"] h1 {
