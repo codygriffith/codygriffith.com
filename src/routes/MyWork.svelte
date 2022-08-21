@@ -63,8 +63,6 @@
 					<div class="desktop_render">
 						<iframe
 							src={item.url}
-							width="62%"
-							height="84%"
 							style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);"
 						/>
 						<img src="laptop-png-grey.png" alt="" />
@@ -72,8 +70,7 @@
 					<div class="mobile_render">
 						<iframe
 							src={item.url}
-							width="15.3%"
-							height="63%"
+							
 							style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);"
 						/>
 						<img src="phone.png" alt="" />
@@ -125,6 +122,11 @@
 		/* background-image: url("laptop-png.png"); */
 		/* overflow: hidden; */
 	}
+
+	.desktop_render iframe{
+		width: 64vw;
+		height:  36vw;
+	}
 	.mobile_render {
 		justify-content: end;
 		position: absolute;
@@ -134,6 +136,11 @@
 		margin-top: 15%;
 		/* margin-right: -10%; */
 		/* overflow: hidden; */
+	}
+
+	.mobile_render iframe {
+		height: 26.75vw;
+		width: 14.85vw;
 	}
 
 	.textual {
@@ -153,13 +160,13 @@
 
 	.desktop_render img {
 		/* position: absolute; */
-		height: 70%;
+		height: 30.8vw;
 		/* justify-self: center; */
 	}
 
 	.desktop_render iframe {
-		margin-top: -9.1%;
-		margin-right: -10.55%;
+		margin-top: -10vw;
+		margin-right: -10.7vw;
 		z-index: 200;
 		position: absolute;
 	}
@@ -173,7 +180,7 @@
 	}
 
 	.mobile_render iframe {
-		margin-top: 2.4vw;
+		margin-top: 2.2vw;
 		margin-right: 5.45vw;
 		z-index: 230;
 		border: none !important;
