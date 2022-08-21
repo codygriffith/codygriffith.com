@@ -96,6 +96,8 @@
 
 	.main .title {
 		/* background-color: black; */
+		padding-bottom: .5vw;
+
 	}
 
 	.textual .summary {
@@ -202,6 +204,7 @@
 
 	.main {
 		background-color: rgba(0, 0, 0, 0.705);
+		padding-top: 2.25vw;
 	}
 
 	h1 {

@@ -184,14 +184,14 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-  <div class="welcome">
-    <img src="hopeful_headshot.png" alt="Welcome" />
+<section class="relative flex flex-col items-center">
+  <div class="welcome flex flex-col justify-center self-start h-[95vh] w-1/2 pt-12 pr-6 ml-16 ">
+    <img src="hopeful_headshot.png" alt="Welcome" class="absolute h-4/5 bottom-0 right-32 z-10" />
 
     <!-- <Counter /> -->
-    <h2>Cody Griffith</h2>
+    <h2 class="text-6xl">Cody Griffith</h2>
 
-    <p>
+    <p class="text-lg 2xl:text-xl ml-1">
       I am a front end web developer with 7 years of experience freelancing for
       small to medium businesses, but at this point i'm looking to move to more
       of a development focused role. Recently, I have been working on a
@@ -200,11 +200,17 @@
     </p>
   </div>
   <!-- {#if show} -->
-  <a use:scrollTo={{ref: 'myWork', duration: 1000}} class="animate_bounce">
-    <svg class="w-6 h-6 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-      <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </a>
+
+  <span class="inline-block animate-bounce rounded-full p-4 text-white text-sm">
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a use:scrollTo={{ref: 'myWork', duration: 1000}} class="animate_bounce">
+      <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </a>
+</span>
+
+  
   <!-- {/if} -->
 </section>
 <Particles
@@ -215,101 +221,3 @@
 />
 
 <MyWork />
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    position: relative;
-    height: 100vh;
-  }
-
-  .animate_bounce {
-    animation: bounce 1s infinite;
-    justify-content: center;
-    display: flex;
-    position: absolute;
-    bottom: 2%;
-    width: 2vw;
-  }
-
-  .animate_bounce svg{
-    margin: auto;
-    color: rgba(255, 255, 255, 0.196);
-  }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-
-  h1 {
-    width: 100%;
-  }
-  .particles_layer1 {
-    position: absolute;
-    z-index: 100;
-    opacity: 0.2;
-  }
-
-  .welcome {
-    display: block;
-    /* position: relative; */
-    /* width: 100%; */
-    padding-top: 5%;
-    height: 95vh;
-    padding-top: 2.5vw;
-    display: flex;
-    flex-direction: column;
-    /* width: 80%; */
-    padding-right: 2vw;
-    justify-content: center;
-    margin-left: 10%;
-    width: 50%;
-    align-self: start;
-    /* padding: 0 0 calc(100% * 495 / 2048) 0; */
-  }
-
-  .welcome p {
-    font-size: 1vw;
-  }
-
-  .welcome img {
-    position: absolute;
-    /* width: 100%; */
-    height: 80%;
-    /* top: 0; */
-    bottom: 0;
-    right: 10%;
-    /* margin-top: 10%; */
-    display: block;
-    z-index: 10;
-  }
-
-  .welcome h2 {
-    font-size: 3vw;
-    margin-block-end: 0;
-  }
-
-  .welcome p {
-    margin-left: 0.25vw;
-  }
-
-  .welcome video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -10;
-    height: 100vh;
-  }
-</style>
