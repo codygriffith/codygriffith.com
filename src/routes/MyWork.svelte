@@ -83,13 +83,7 @@
 
 <style>
 	section {
-		/* justify-content: center; */
-		/* align-items: center; */
 		flex: 1;
-		/* position: relative; */
-		/* overflow: hidden; */
-		/* height: 100vh; */
-		/* background-color: rgba(0, 0, 0, 0.705); */
 	}
 
 	.main .title {
