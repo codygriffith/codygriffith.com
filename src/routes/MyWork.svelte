@@ -49,7 +49,7 @@
 		<div slot="foreground">
 			{#each items as item, i}
 				<!-- content here -->
-				<section>
+				<section class="flex flex-col justify-center relative">
 					{#if i <= index && count != 0}
 						<div class="textual" transition:slide|local="{{ duration: 2000 }}">
 							<h1>{item.name}</h1>
@@ -83,13 +83,11 @@
 
 <style>
 	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		/* justify-content: center; */
+		/* align-items: center; */
 		flex: 1;
-		position: relative;
-		overflow: hidden;
+		/* position: relative; */
+		/* overflow: hidden; */
 		/* height: 100vh; */
 		/* background-color: rgba(0, 0, 0, 0.705); */
 	}
