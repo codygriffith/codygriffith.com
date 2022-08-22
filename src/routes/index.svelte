@@ -185,11 +185,11 @@
 </svelte:head>
 
 <section class="relative flex flex-col items-center">
-  <div class="welcome flex flex-col justify-center self-start h-[95vh] w-1/2 pt-12 pr-6 ml-16 ">
-    <img src="hopeful_headshot.png" alt="Welcome" class="absolute h-4/5 bottom-0 right-32 z-10" />
+  <div class="welcome flex flex-col justify-center self-start h-1/5 lg:h-[95vh] w-3/5 pt-12 pr-6 ml-16 ">
+    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-4/12 bottom-0 right-[5vw] z-10" />
 
     <!-- <Counter /> -->
-    <h2 class="text-6xl">Cody Griffith</h2>
+    <h2 class="text-6xl mb-6">Cody Griffith</h2>
 
     <p class="text-lg 2xl:text-xl ml-1">
       I am a front end web developer with 7 years of experience freelancing for
