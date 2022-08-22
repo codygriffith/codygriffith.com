@@ -7,20 +7,22 @@
 
 	<nav>
 		<div>
-			<a href="/">
+			<a href="/" class="text-xl font-bold">
 				<!-- <img src={logo} alt="SvelteKit" /> -->
 				Cody Griffith
 			</a>
 		</div>
 		<div>
-			
 			<ul>
-				<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-				<li class:active={$page.url.pathname === '/about'}>
+				<!-- <li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li> -->
+				<!-- <li class:active={$page.url.pathname === '/about'}>
 					<a sveltekit:prefetch href="/about">About</a>
-				</li>
-				<li class:active={$page.url.pathname === '/todos'}>
+				</li> -->
+				<!-- <li class:active={$page.url.pathname === '/todos'}>
 					<a sveltekit:prefetch href="/todos">Todos</a>
+				</li> -->
+				<li class:active={$page.url.pathname === '/resume'} class="font-semibold">
+					<a sveltekit:prefetch href="/todos">Resume</a>
 				</li>
 			</ul>
 			
@@ -125,9 +127,9 @@
 		align-items: center;
 		/* margin: 0 1em; */
 		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 1rem;
-		text-transform: uppercase;
+		/* font-weight: 700; */
+		/* font-size: 1rem; */
+		/* text-transform: uppercase; */
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;

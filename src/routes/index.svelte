@@ -185,13 +185,13 @@
 </svelte:head>
 
 <section class="relative flex flex-col items-center">
-  <div class="welcome flex flex-col justify-center self-start h-1/5 lg:h-[95vh] w-3/5 pt-12 pr-6 ml-16 ">
-    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-4/12 bottom-0 right-[5vw] z-10" />
+  <div class="welcome flex flex-col justify-center self-start h-[70vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 ">
+    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-6/12 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
     <!-- <Counter /> -->
-    <h2 class="text-6xl mb-6">Cody Griffith</h2>
+    <h2 class="text-2xl mb-2 md:text-6xl md:mb-6">Cody Griffith</h2>
 
-    <p class="text-lg 2xl:text-xl ml-1">
+    <p class="text-sm md:text-lg 2xl:text-xl ml-1 z-10">
       I am a front end web developer with 7 years of experience freelancing for
       small to medium businesses, but at this point i'm looking to move to more
       of a development focused role. Recently, I have been working on a
