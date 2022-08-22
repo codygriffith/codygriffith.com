@@ -185,8 +185,8 @@
 </svelte:head>
 
 <section class="relative flex flex-col items-center">
-  <div class="welcome flex flex-col justify-center self-start h-[70vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 ">
-    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-6/12 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
+  <div class="welcome flex flex-col justify-center self-start h-[100vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 mb-[-5vw] md:mb-0">
+    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-8/12 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
     <!-- <Counter /> -->
     <h2 class="text-2xl mb-2 md:text-6xl md:mb-6">Cody Griffith</h2>
