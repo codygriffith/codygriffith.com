@@ -8,148 +8,11 @@
   import { onDestroy, onMount } from "svelte";
 
   import Counter from "$lib/Counter.svelte";
+  import particlesConfig from "$lib/particlesConfig.json"
   import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
   import { scale } from "svelte/transition";
 
-  let particlesConfig = {
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: "push",
-        },
-        onHover: {
-          mode: "repulse",
-        },
-      },
-      modes: {
-        bubble: {
-          distance: 400,
-          duration: 2,
-          opacity: 0.8,
-          size: 40,
-          divs: {
-            distance: 200,
-            duration: 0.4,
-            mix: false,
-            selectors: [],
-          },
-        },
-        grab: {
-          distance: 400,
-        },
-        push: {
-          groups: ["z5000", "z7500", "z2500", "z1000"],
-        },
-        repulse: {
-          divs: {
-            distance: 200,
-            duration: 0.4,
-            factor: 100,
-            speed: 1,
-            maxSpeed: 50,
-            easing: "ease-out-quad",
-            selectors: [],
-          },
-        },
-      },
-    },
-    particles: {
-      color: {
-        animation: {
-          h: {
-            speed: 20,
-          },
-        },
-      },
-      groups: {
-        z5000: {
-          number: {
-            value: 70,
-          },
-          zIndex: {
-            value: 50,
-          },
-        },
-        z7500: {
-          number: {
-            value: 30,
-          },
-          zIndex: {
-            value: 75,
-          },
-        },
-        z2500: {
-          number: {
-            value: 50,
-          },
-          zIndex: {
-            value: 25,
-          },
-        },
-        z1000: {
-          number: {
-            value: 40,
-          },
-          zIndex: {
-            value: 10,
-          },
-        },
-      },
-      links: {
-        color: {
-          value: "#ffffff",
-        },
-        opacity: 0.4,
-      },
-      move: {
-        angle: {
-          value: 10,
-        },
-        attract: {
-          rotate: {
-            x: 600,
-            y: 1200,
-          },
-        },
-        direction: "top",
-        enable: true,
-        path: {},
-        outModes: {
-          bottom: "out",
-          left: "out",
-          right: "out",
-          top: "out",
-        },
-        speed: 1,
-        spin: {},
-      },
-      number: {
-        value: 100,
-      },
-      opacity: {
-        animation: {
-          speed: 3,
-          minimumValue: 0.1,
-        },
-      },
-      size: {
-        animation: {},
-      },
-      zIndex: {
-        value: 5,
-        opacityRate: 0.5,
-      },
-    },
-  };
-
-  let onParticlesLoaded = (event) => {
-    const particlesContainer = event.detail.particles;
-
-    // you can use particlesContainer to call all the Container class
-    // (from the core library) methods like play, pause, refresh, start, stop
-  };
 
   let particlesInit = async (engine) => {
     // you can use main to customize the tsParticles instance adding presets or custom shapes
@@ -199,7 +62,6 @@
 <Particles
   id="tsparticles"
   options={particlesConfig}
-  on:particlesLoaded={onParticlesLoaded}
   {particlesInit}
 />
 
