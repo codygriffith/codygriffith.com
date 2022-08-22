@@ -74,7 +74,7 @@
 		display: flex;
 		justify-content: space-between;
 		/* --background: black; */
-		width: 80%;
+		width: 91%;
 		z-index: 200;
 		position: absolute;
 	}
