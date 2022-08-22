@@ -12,7 +12,7 @@
 	let offset = 0;
 	let progress = 0.0;
 	let top = 0.1;
-	let threshold = 0.75;
+	let threshold = 0.85;
 	let bottom = 0.9;
 
 	let items = [
@@ -49,11 +49,11 @@
 		<div slot="foreground">
 			{#each items as item, i}
 				<!-- content here -->
-				<section class="flex flex-col justify-center relative">
+				<section class="flex md:flex-col justify-center relative">
 					{#if i <= index && count != 0}
-						<div class="textual" transition:slide|local="{{ duration: 2000 }}">
-							<h1>{item.name}</h1>
-							<p class="summary">{item.summary}</p>
+						<div class="textual mt-8 w-full md:w-3/6" transition:slide|local="{{ duration: 2000 }}">
+							<h1 class="text-3xl md:text-5xl">{item.name}</h1>
+							<p class="summary text-based pr-6">{item.summary}</p>
 							<!-- <p>{i}</p> -->
 
 							<!-- content here -->
@@ -93,7 +93,7 @@
 	}
 
 	.textual .summary {
-		font-size: 1vw;
+		/* font-size: 1vw; */
 	}
 
 	section div {
@@ -141,13 +141,13 @@
 		position: absolute;
 		margin-left: 5%;
 		left: 0;
-		width: 40% !important;
+		/* width: 40%; */
 		margin-top: -5vw;
 		/* text-shadow: #ff3e00 .1vw .1vw; */
 	}
 
 	.textual h1 {
-		font-size: 2vw;
+		/* font-size: 2vw; */
 		margin-block-start: 0;
 		margin-block-end: 0;
 	}
@@ -277,7 +277,7 @@
 
 	[slot="foreground"] .textual {
 		/* pointer-events: none; */
-		width: 100%;
+		/* width: 100%; */
 	}
 
 	[slot="foreground"] iframe {
