@@ -61,11 +61,11 @@
 					{/if}
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
 					<div class="desktop_render">
-						<iframe
+						<iframe class="md:mt-[-10vw] md:mr-[-10.7vw] md:w-[64vw] md:h-[36vw] mt-[-16vw] mr-[-17.25vw] h-[59vw] w-[104vw]"
 							src={item.url}
 							style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);"
 						/>
-						<img src="laptop-png-grey.png" alt="" />
+						<img src="laptop-png-grey.png" class="h-[50vw] md:h-[30.8vw]" alt="" />
 					</div>
 					<div class="mobile_render">
 						<iframe
@@ -117,10 +117,10 @@
 		/* overflow: hidden; */
 	}
 
-	.desktop_render iframe{
+	/* .desktop_render iframe{
 		width: 64vw;
 		height:  36vw;
-	}
+	} */
 	.mobile_render {
 		justify-content: end;
 		position: absolute;
@@ -154,13 +154,12 @@
 
 	.desktop_render img {
 		/* position: absolute; */
-		height: 30.8vw;
 		/* justify-self: center; */
 	}
 
 	.desktop_render iframe {
-		margin-top: -10vw;
-		margin-right: -10.7vw;
+		/* margin-top: -10vw; */
+		/* margin-right: -10.7vw; */
 		z-index: 200;
 		position: absolute;
 	}
