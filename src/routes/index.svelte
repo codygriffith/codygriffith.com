@@ -12,23 +12,6 @@
   import { loadFull } from "tsparticles";
   import { scale } from "svelte/transition";
 
-  let show = false;
-  let interval;
-
-  onMount(() => {
-    interval = setInterval(() => {
-      show = !show;
-    }, 2000);
-  });
-
-  onDestroy(() => {
-    if (interval) {
-      clearInterval(interval);
-    }
-  });
-
-  let particlesUrl = "http://foo.bar/particles.json";
-
   let particlesConfig = {
     interactivity: {
       events: {
