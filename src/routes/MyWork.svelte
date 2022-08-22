@@ -25,7 +25,7 @@
 </script>
 
 <section class="main" id="myWork" use:scrollRef={'myWork'}>
-	<h1 class="title">My Projects</h1>
+	<h1 class="title text-base md:text-2xl mt-8 mb-4">My Projects</h1>
 	<Scroller
 		{top}
 		{threshold}
