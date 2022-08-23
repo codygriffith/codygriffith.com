@@ -118,7 +118,7 @@
 					{/if}
 
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
-					<div class="desktop_render md:mr-[15%] mt-[-20vw] md:mt-0">
+					<div class="desktop_render md:mr-[15%] mt-[-10vw] md:mt-0">
 						<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[2vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
 						<img src="laptop-png-grey.png" class="h-[60vw] mt-[21vw] md:mt-0 md:h-[30.8vw]" alt="" />
 					</div>
