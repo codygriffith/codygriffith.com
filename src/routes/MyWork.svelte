@@ -118,13 +118,13 @@
 					{/if}
 
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
-					<div class="desktop_render">
-						<iframe class="md:mt-[-10vw] md:mr-[-10.7vw] md:w-[64vw] md:h-[36vw] mt-[-16vw] mr-[-17.25vw] h-[59vw] w-[104vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
-						<img src="laptop-png-grey.png" class="h-[50vw] md:h-[30.8vw]" alt="" />
+					<div class="desktop_render md:mr-[15%]">
+						<iframe class="md:mt-[-10vw] md:mr-[-10.7vw] md:w-[64vw] md:h-[36vw] mt-[2vw] mr-[-21vw] h-[69vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
+						<img src="laptop-png-grey.png" class="h-[60vw] mt-20 md:mt-0 md:h-[30.8vw]" alt="" />
 					</div>
 					<div class="mobile_render">
-						<iframe src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
-						<img src="phone.png" alt="" />
+						<iframe class="md:h-[26.75vw] md:w-[14.85vw] mt-[47vw] h-[63.5vw] w-[34.5vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
+						<img src="phone.png" class="w-3/12 mt-[56vw] md:w-[10%] md:mr-[8vw] md:mt-[6vw]" alt="" />
 					</div>
 				</section>
 			{/each}
@@ -162,7 +162,7 @@
 		height: 100%;
 		position: relative;
 		align-items: center;
-		margin-right: 15%;
+		/* margin-right: 15%; */
 		/* background-image: url("laptop-png.png"); */
 		/* overflow: hidden; */
 	}
@@ -182,10 +182,10 @@
 		/* overflow: hidden; */
 	}
 
-	.mobile_render iframe {
+	/* .mobile_render iframe {
 		height: 26.75vw;
 		width: 14.85vw;
-	}
+	} */
 
 	.textual {
 		position: absolute;
@@ -216,15 +216,12 @@
 
 	.mobile_render img {
 		position: absolute;
-		width: 10%;
-		margin-right: 8vw;
-		margin-top: 6vw;
+		
 		z-index: 220;
 	}
 
 	.mobile_render iframe {
-		margin-top: 2.2vw;
-		margin-right: 5.45vw;
+		
 		z-index: 230;
 		border: none !important;
 	}
