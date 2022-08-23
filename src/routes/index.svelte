@@ -29,13 +29,13 @@
 </svelte:head>
 
 <section class="relative flex flex-col items-center">
-  <div class="welcome flex flex-col justify-center self-start h-[100vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 mb-[-5vw] md:mb-0">
+  <div class="welcome flex flex-col justify-center self-start h-[110vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 mt-10 ms:mt-0 mb-[-10vw] md:mb-0">
     <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-8/12 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
     <!-- <Counter /> -->
     <h2 class="text-2xl mb-2 md:text-6xl md:mb-6">Cody Griffith</h2>
 
-    <p class="text-[3.65vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
+    <p class="text-[3.75vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
 
     <div class="flex">
       <a target="_blank" class="mr-4 md:mr-8 my-4 w-6 md:w-8" href="https://github.com/codygriffith">
