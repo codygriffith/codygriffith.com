@@ -38,7 +38,7 @@
     <p class="text-sm md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
 
     <div class="flex">
-      <a target="_blank" class="mr-8 my-4 w-6 md:w-10" href="https://github.com/codygriffith">
+      <a target="_blank" class="mr-8 my-4 w-6 md:w-8" href="https://github.com/codygriffith">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="iconify iconify--iconoir">
           <g fill="none" stroke="#ffffffb3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
             ><path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.38 13.38 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87" />
@@ -47,7 +47,7 @@
         </svg>
       </a>
 
-      <a target="_blank" class="mr-8 my-4 w-6 md:w-10" href="https://www.linkedin.com/in/cody-g/">
+      <a target="_blank" class="mr-8 my-4 w-6 md:w-8" href="https://www.linkedin.com/in/cody-g/">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20" class="iconify iconify--dashicons">
           <path fill="#ffffffb3" d="M2.5 18h3V6.9h-3V18zM4 2c-1 0-1.8.8-1.8 1.8S3 5.6 4 5.6s1.8-.8 1.8-1.8S5 2 4 2zm6.6 6.6V6.9h-3V18h3v-5.7c0-3.2 4.1-3.4 4.1 0V18h3v-6.8c0-5.4-5.7-5.2-7.1-2.6z" />
         </svg>
