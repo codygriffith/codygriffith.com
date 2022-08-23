@@ -119,12 +119,12 @@
 
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
 					<div class="desktop_render md:mr-[15%]">
-						<iframe class="md:mt-[-10vw] md:mr-[-10.7vw] md:w-[64vw] md:h-[36vw] mt-[2vw] mr-[-21vw] h-[69vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
+						<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[2vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
 						<img src="laptop-png-grey.png" class="h-[60vw] mt-20 md:mt-0 md:h-[30.8vw]" alt="" />
 					</div>
 					<div class="mobile_render">
 						<iframe class="md:h-[26.75vw] md:w-[14.85vw] mt-[47vw] h-[63.5vw] w-[34.5vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
-						<img src="phone.png" class="w-3/12 mt-[56vw] md:w-[10%] md:mr-[8vw] md:mt-[6vw]" alt="" />
+						<img src="phone.png" class="w-[23vw] mt-[56vw] md:w-[10%] md:mr-[8vw] md:mt-[6vw]" alt="" />
 					</div>
 				</section>
 			{/each}
