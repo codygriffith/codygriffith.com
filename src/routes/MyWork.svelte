@@ -39,7 +39,7 @@
 		<div slot="foreground">
 			{#each items as item, i}
 				<!-- content here -->
-				<section class="flex md:flex-col justify-center relative md:h-[80vh]">
+				<section class="flex md:flex-col justify-center relative">
 					<!-- {#if i <= index && count != 0} -->
 						<div class="textual md:mt-8 w-full z-[100]" >
 							<h1 class="text-3xl md:text-5xl">{item.name}</h1>
