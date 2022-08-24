@@ -35,7 +35,7 @@
     <!-- <Counter /> -->
     <h2 class="text-2xl mb-2 md:text-4xl lg:text-6xl md:mb-6">Cody Griffith</h2>
 
-    <p class="text-[3.65vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
+    <p class="text-[3.75vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
 
     <div class="flex">
       <a target="_blank" class="mr-4 md:mr-8 my-4 w-6 md:w-8" href="https://github.com/codygriffith">
