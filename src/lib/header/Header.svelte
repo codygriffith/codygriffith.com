@@ -22,7 +22,7 @@
 					<a sveltekit:prefetch href="/todos">Todos</a>
 				</li> -->
 				<li class:active={$page.url.pathname === '/resume'} class="font-semibold">
-					<a sveltekit:prefetch href="/todos">Resume</a>
+					<a sveltekit:prefetch href="/resume">Resume</a>
 				</li>
 			</ul>
 			
