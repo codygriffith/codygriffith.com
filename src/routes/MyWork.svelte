@@ -16,7 +16,7 @@
 
 	let items = [
 		{ name: "Contidly", url: "https://contidly.com", summary: "Saas webapp for automatically qualifying leads and tracking interactions.", tags: ["netlify", "stripe", "tailwindcss", "svelte"] },
-		{ name: "Pathlight", url: "https://pathlight.dev", summary: "Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.", tags: ["netlify", "tailwindcss", "svelte", "AWS"] },
+		{ name: "Pathlight", url: "https://pathlight.dev", summary: "Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.", tags: ["netlify", "tailwindcss", "svelte", "AWS"] },
 	];
 
 	import { scrollTo, scrollRef, scrollTop } from "svelte-scrolling";
@@ -39,9 +39,9 @@
 		<div slot="foreground">
 			{#each items as item, i}
 				<!-- content here -->
-				<section class="flex md:flex-col justify-center relative h-[60vh] md:h-[80vh]">
-					{#if i <= index && count != 0}
-						<div class="textual md:mt-8 w-full md:w-3/6 z-[100]" transition:slide={{ duration: 2000 }}>
+				<section class="flex md:flex-col justify-center relative md:h-[80vh]">
+					<!-- {#if i <= index && count != 0} -->
+						<div class="textual md:mt-8 w-full z-[100]" >
 							<h1 class="text-3xl md:text-5xl">{item.name}</h1>
 							<p class="summary text-lg md:text-base my-2 pr-6">{item.summary}</p>
 
@@ -112,20 +112,24 @@
 							<!-- <p>{i}</p> -->
 
 							<!-- content here -->
+							<div class="relative">
+								<div class="mobile_render md:mt-[3.5%] md:ml-[6vw]">
+									<iframe class="md:h-[26.75vw] md:w-[14.75vw] mt-[9vw] h-[63.5vw] w-[34.9vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
+									<img src="phone.png" class="w-[23vw] mt-[18vw] md:w-[10%] md:mr-[8vw] md:mt-[6vw]" alt="" />
+								</div>
+								<div class="desktop_render md:mr-[15%] md:mt-[-10vw] md:mt-0">
+									<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[-12vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
+									<img src="laptop-png-grey.png" class="h-[60vw] mt-[7vw] md:mt-0 md:h-[30.8vw]" alt="" />
+								</div>
+
+							</div>
 						</div>
-					{:else if count == undefined}
+					<!-- {:else if count == undefined}
 						<p>count undefined</p>
-					{/if}
+					{/if} -->
 
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
-					<div class="desktop_render md:mr-[15%] mt-[10vw] md:mt-[-10vw] md:mt-0">
-						<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[2vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
-						<img src="laptop-png-grey.png" class="h-[60vw] mt-[21vw] md:mt-0 md:h-[30.8vw]" alt="" />
-					</div>
-					<div class="mobile_render mt-[10vw] md:mt-[15%]">
-						<iframe class="md:h-[26.75vw] md:w-[14.85vw] mt-[47vw] h-[63.5vw] w-[34.5vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
-						<img src="phone.png" class="w-[23vw] mt-[56vw] md:w-[10%] md:mr-[8vw] md:mt-[6vw]" alt="" />
-					</div>
+					
 				</section>
 			{/each}
 		</div>
@@ -142,14 +146,6 @@
 		padding-bottom: 0.5vw;
 	}
 
-	.textual .summary {
-		/* font-size: 1vw; */
-	}
-
-	section div {
-		/* width: 100%; */
-	}
-
 	[slot="background"] {
 		border: none !important;
 		background: none !important;
@@ -160,40 +156,23 @@
 		justify-content: end;
 		display: flex;
 		height: 100%;
-		position: relative;
 		align-items: center;
-		/* margin-right: 15%; */
-		/* background-image: url("laptop-png.png"); */
-		/* overflow: hidden; */
 	}
 
-	/* .desktop_render iframe{
-		width: 64vw;
-		height:  36vw;
-	} */
+
 	.mobile_render {
 		justify-content: end;
 		position: absolute;
 		display: flex;
 		width: 100%;
 		height: 100%;
-		/* margin-top: 15%; */
-		/* margin-right: -10%; */
-		/* overflow: hidden; */
+
 	}
 
-	/* .mobile_render iframe {
-		height: 26.75vw;
-		width: 14.85vw;
-	} */
 
 	.textual {
-		position: absolute;
-		margin-left: 5%;
+		/* position: absolute; */
 		left: 0;
-		/* width: 40%; */
-		/* margin-top: -5vw; */
-		/* text-shadow: #ff3e00 .1vw .1vw; */
 	}
 
 	.textual h1 {
