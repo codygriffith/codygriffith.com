@@ -23,7 +23,7 @@
 </script>
 
 <section class="main" id="myWork" use:scrollRef={"myWork"}>
-	<h1 class="title text-base md:text-2xl mt-8 mb-4">My Projects</h1>
+	<h1 class="title text-lg  md:text-2xl mt-8 mb-4">My Projects</h1>
 	<Scroller {top} {threshold} {bottom} bind:count bind:index bind:offset bind:progress>
 		<!-- <div slot="background">
 			<p>current section: <strong>{index + 1}/{count}</strong></p>
@@ -39,11 +39,11 @@
 		<div slot="foreground">
 			{#each items as item, i}
 				<!-- content here -->
-				<section class="flex md:flex-col justify-center relative">
+				<section class="flex md:flex-col justify-center relative h-[60vh] md:h-[80vh]">
 					{#if i <= index && count != 0}
-						<div class="textual mt-8 w-full md:w-3/6 z-[100]" transition:slide={{ duration: 2000 }}>
+						<div class="textual md:mt-8 w-full md:w-3/6 z-[100]" transition:slide={{ duration: 2000 }}>
 							<h1 class="text-3xl md:text-5xl">{item.name}</h1>
-							<p class="summary text-based my-2 pr-6">{item.summary}</p>
+							<p class="summary text-lg md:text-base my-2 pr-6">{item.summary}</p>
 
 							<div class="w-auto flex mt-5">
 								<!-- Netlify -->
@@ -118,7 +118,7 @@
 					{/if}
 
 					<!-- <iframe src="http://localhost:8888"></iframe> -->
-					<div class="desktop_render md:mr-[15%] mt-[-10vw] md:mt-0">
+					<div class="desktop_render md:mr-[15%] mt-[10vw] md:mt-[-10vw] md:mt-0">
 						<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[2vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
 						<img src="laptop-png-grey.png" class="h-[60vw] mt-[21vw] md:mt-0 md:h-[30.8vw]" alt="" />
 					</div>
@@ -192,7 +192,7 @@
 		margin-left: 5%;
 		left: 0;
 		/* width: 40%; */
-		margin-top: -5vw;
+		/* margin-top: -5vw; */
 		/* text-shadow: #ff3e00 .1vw .1vw; */
 	}
 
@@ -241,7 +241,9 @@
 	}
 
 	.main {
-		background-color: rgba(0, 0, 0, 0.705);
+		/* background-color: rgba(0, 0, 0, 0.705); */
+		background-color: #101011d8;
+		z-index: 100;
 		padding-top: 2.25vw;
 	}
 
@@ -339,7 +341,7 @@
 	}
 
 	section {
-		height: 80vh;
+		/* height: 80vh; */
 		color: white;
 		padding: 1em;
 		margin: 0 0 2em 0;
