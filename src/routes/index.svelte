@@ -30,10 +30,10 @@
 
 <section class="relative flex flex-col items-center md:h-[100vh] lg:h-[100vh]">
   <div class="welcome flex h-full flex-col justify-center py-12 md:py-0 self-start w-7/12 lg:w-3/5 pt-[20vw] pr-6 ml-4 lg:ml-16 mb-[-5vw] md:mb-0">
-    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-8/12 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
+    <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-8/12 md:w-[44vw] md:mb-[-12vw] lg:mb-0 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
     <!-- <Counter /> -->
-    <h2 class="text-2xl mb-2 md:text-6xl md:mb-6">Cody Griffith</h2>
+    <h2 class="text-2xl mb-2 md:text-4xl lg:text-6xl md:mb-6">Cody Griffith</h2>
 
     <p class="text-[3.65vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
 
