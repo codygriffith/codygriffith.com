@@ -28,14 +28,14 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="relative flex flex-col items-center">
-  <div class="welcome flex flex-col justify-center self-start h-[110vw] lg:h-[95vh] w-7/12 lg:w-3/5 pt-12 pr-6 ml-4 lg:ml-16 mt-10 ms:mt-0 mb-[-10vw] md:mb-0">
+<section class="relative flex flex-col items-center md:h-[100vh] lg:h-[100vh]">
+  <div class="welcome flex h-full flex-col justify-center py-12 md:py-0 self-start w-7/12 lg:w-3/5 pt-[20vw] pr-6 ml-4 lg:ml-16 mb-[-5vw] md:mb-0">
     <img src="hopeful_headshot.png" alt="Welcome" class="absolute w-8/12 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
     <!-- <Counter /> -->
     <h2 class="text-2xl mb-2 md:text-6xl md:mb-6">Cody Griffith</h2>
 
-    <p class="text-[3.75vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
+    <p class="text-[3.65vw] md:text-lg 2xl:text-xl ml-1 z-10">I am a front end web developer with 7 years of experience freelancing for small to medium businesses, but at this point i'm looking to move to more of a development focused role. Recently, I have been working on a full-stack saas app called Contidly - a tool for tracking and automatically qualifying potential clients.</p>
 
     <div class="flex">
       <a target="_blank" class="mr-4 md:mr-8 my-4 w-6 md:w-8" href="https://github.com/codygriffith">
@@ -56,7 +56,7 @@
   </div>
   <!-- {#if show} -->
 
-  <span class="inline-block animate-bounce rounded-full p-4 text-white text-sm">
+  <span class="inline-block animate-bounce rounded-full p-4 text-white text-sm absolute bottom-0">
     <!-- svelte-ignore a11y-missing-attribute -->
     <a use:scrollTo={{ ref: "myWork", duration: 1000 }} class="animate_bounce">
       <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
