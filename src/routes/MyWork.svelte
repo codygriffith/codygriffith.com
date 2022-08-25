@@ -54,7 +54,7 @@
 					<!-- {#if i <= index && count != 0} -->
 					<div class="textual md:mt-8 w-full z-[100] lg:flex ">
 						<div class="lg:w-[55%]">
-							<a href="https://contidly.com">
+							<a href="{item.url}">
 								<h1 class="text-3xl md:text-5xl">{item.name}</h1>
 							</a>
 
@@ -126,7 +126,7 @@
 											 •
 										 </div>
 									{/if}
-									<a class="text-white underline underline-offset-4 mr-6" href="{item.url}">Visit Website</a>
+									<a class="underline text-white underline-color-red decoration-2	underline-offset-4 hover:decoration-[#4166ab] hover:decoration-2 mr-6" href="{item.url}">Visit Website</a>
 									<!-- ➟ -->
 								</div>
 								
