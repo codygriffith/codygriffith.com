@@ -15,10 +15,15 @@
 	let bottom = 0.9;
 
 	let items = [
-		{ name: "Contidly", url: "https://contidly.com", summary: "A lightweight CRM built with Web Developers in mind - Contidly is a saas webapp for automatically qualifying leads and tracking interactions.", tags: ["netlify", "stripe", "tailwindcss", "svelte"] },
+		{ 
+			name: "Contidly", 
+			url: "https://contidly.com",
+			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a saas webapp for automatically qualifying leads and tracking interactions.", 
+			tags: ["netlify", "stripe", "tailwindcss", "svelte"] },
 		{
 			name: "Pathlight",
 			url: "https://pathlight.dev",
+			repo: "https://github.com/codygriffith/pathlight",
 			summary:
 				"Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.",
 			tags: ["netlify", "tailwindcss", "svelte", "AWS"],
@@ -111,12 +116,20 @@
 										</a>
 									{/if}
 								</div>
-								<div class="flex items-center text-2xl">
+								<div class="flex items-center text-xl">
 									•
 								</div>
 								<div class="flex items-center ml-5 font-bold text-white">
-									<a class="text-white underline underline-offset-4" href="{item.url}">Visit Website ➟ </a>
+									{#if item.repo}
+										 <a class="text-white underline underline-offset-4 mr-4" href="{item.repo}">View Repository</a>
+										 <div class="flex items-center text-xl mr-4">
+											 •
+										 </div>
+									{/if}
+									<a class="text-white underline underline-offset-4 mr-6" href="{item.url}">Visit Website</a>
+									<!-- ➟ -->
 								</div>
+								
 							</div>
 						</div>
 
