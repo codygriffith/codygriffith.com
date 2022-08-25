@@ -23,6 +23,8 @@
 
 <iframe src="resume.pdf" width="100%" height="100%" class="frame"></iframe>
 
+<footer></footer>
+
 
 </div>
 
@@ -38,13 +40,9 @@
   box-sizing: border-box;
 }
 
-:global(header) {
+/* :global(header) {
     position: unset !important;
-}
-:global(footer) {
-    /* position: unset; */
-    display: none !important;
-}
+} */
 </style>
 
 
