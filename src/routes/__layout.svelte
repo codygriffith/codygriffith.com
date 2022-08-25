@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
+	import { page } from '$app/stores';
+
 	import '../app.css';
 </script>
 
@@ -9,10 +11,12 @@
 	<slot />
 </main>
 
-<footer>
-	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
-	<p>©2022 Cody Griffith</p>
-</footer>
+{#if !($page.url.pathname === '/resume')}
+	<footer>
+		<!-- content here -->
+		<p>©2022 Cody Griffith</p>
+	</footer>
+{/if}
 
 <style>
 	main {
