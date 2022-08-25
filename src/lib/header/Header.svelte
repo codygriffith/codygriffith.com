@@ -3,7 +3,7 @@
 	import logo from './svelte-logo.svg';
 </script>
 
-<header>
+<header class:fixed={$page.url.pathname != '/resume'}>
 
 	<nav>
 		<div>
@@ -39,7 +39,7 @@
 		display: flex;
 		justify-content: center;
 		background-color: black;
-		position: fixed;
+		/* position: fixed; */
 		width: 100%;
 		z-index: 200;
 	}
