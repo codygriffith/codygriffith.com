@@ -18,14 +18,14 @@
 		{ 
 			name: "Contidly", 
 			url: "https://contidly.com",
-			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a saas webapp for automatically qualifying leads and tracking interactions.", 
+			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a SaaS webapp that automates the work of choosing qualified leads and tracking interactions. Using the <a href='https://developers.google.com/speed/docs/insights/v5/get-started'>PageSpeed Insights API</a>, users are able to perform bulk audits on client websites and filter the results using selected options to leverage that data into better marketing decisions.", 
 			tags: ["netlify", "stripe", "tailwindcss", "svelte"] },
 		{
 			name: "Pathlight",
 			url: "https://pathlight.dev",
 			repo: "https://github.com/codygriffith/pathlight",
 			summary:
-				"Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.",
+				"Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. ",
 			tags: ["netlify", "tailwindcss", "svelte", "AWS"],
 		},
 	];
@@ -58,7 +58,7 @@
 								<h1 class="text-3xl md:text-5xl">{item.name}</h1>
 							</a>
 
-							<p class="summary text-lg md:text-base lg:text-lg my-2 pr-6">{item.summary}</p>
+							<p class="summary text-lg md:text-base lg:text-lg my-2 pr-6">{@html item.summary}</p>
 
 							<div class="w-auto flex-col md:flex-row flex mt-5">
 								<div class="w-auto flex">
