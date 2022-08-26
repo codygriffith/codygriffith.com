@@ -25,7 +25,7 @@
 			url: "https://pathlight.dev",
 			repo: "https://github.com/codygriffith/pathlight",
 			summary:
-				"Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.",
+				"Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results. Public API for auditing a web address using Google Lighthouse and dashboard for displaying and viewing results.",
 			tags: ["netlify", "tailwindcss", "svelte", "AWS"],
 		},
 	];
@@ -60,7 +60,7 @@
 
 							<p class="summary text-lg md:text-base lg:text-lg my-2 pr-6">{item.summary}</p>
 
-							<div class="w-auto flex mt-5">
+							<div class="w-auto flex-col md:flex-row flex mt-5">
 								<div class="w-auto flex">
 									<!-- Netlify -->
 									<!-- {item.tags[0]} -->
@@ -116,17 +116,17 @@
 										</a>
 									{/if}
 								</div>
-								<div class="flex items-center text-xl">
+								<div class="items-center text-xl hidden md:flex">
 									•
 								</div>
-								<div class="flex items-center ml-5 font-bold text-white">
+								<div class="flex items-center text-sm lg:text-base mt-2 md:mt-0 md:ml-5 font-bold text-white">
 									{#if item.repo}
-										 <a class="text-white underline underline-offset-4 mr-4" href="{item.repo}">View Repository</a>
-										 <div class="flex items-center text-xl mr-4">
+										 <a class="text-white underline underline-offset-4 decoration-1	underline-offset-4 hover:decoration-[#4166ab] hover:decoration-1 mr-4" href="{item.repo}">View Repository</a>
+										 <div class="flex items-center lg:text-base mr-4">
 											 •
 										 </div>
 									{/if}
-									<a class="underline text-white underline-color-red decoration-2	underline-offset-4 hover:decoration-[#4166ab] hover:decoration-2 mr-6" href="{item.url}">Visit Website</a>
+									<a class="underline text-white decoration-1	underline-offset-4 hover:decoration-[#4166ab] hover:decoration-1 mr-6" href="{item.url}">Visit Website</a>
 									<!-- ➟ -->
 								</div>
 								
