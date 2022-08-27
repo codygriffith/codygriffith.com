@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Cody Griffith | Web Developer</title>
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
