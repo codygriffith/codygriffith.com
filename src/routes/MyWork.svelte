@@ -18,7 +18,7 @@
 		{ 
 			name: "Contidly", 
 			url: "https://contidly.com",
-			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a SaaS webapp that automates the work of choosing qualified leads and tracking interactions. Using the <a href='https://developers.google.com/speed/docs/insights/v5/get-started'>PageSpeed Insights API</a>, users are able to perform bulk audits on client websites and filter the results using selected options to leverage that data into better marketing decisions.", 
+			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a SaaS webapp that automates the work of choosing qualified leads and tracking interactions. Using the <a href='https://developers.google.com/speed/docs/insights/v5/get-started'>PageSpeed Insights API</a>, users are able to perform bulk audits on client websites and filter the results using selected options to leveragee that data into better marketing decisions.", 
 			tags: ["netlify", "stripe", "tailwindcss", "svelte"] },
 		{
 			name: "Pathlight",
@@ -141,9 +141,9 @@
 								<iframe class="md:h-[26.75vw] md:w-[14.75vw] mt-[9vw] h-[63.5vw] w-[34.9vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
 								<img src="phone.png" class="w-[23vw] mt-[18vw] md:w-[9.65vw] md:mr-[8vw] md:mt-[6vw]" alt="" />
 							</div>
-							<div class="desktop_render md:mr-[15%] md:mt-[-10vw] md:mt-0">
+							<div class="desktop_render md:mr-[15%] md:mt-[unset] md:mt-[-10vw] md:mt-0">
 								<iframe class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[-12vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
-								<img src="laptop-png-grey.png" class="h-[60vw] mt-[7vw] md:mt-0 md:h-[30.8vw]" alt="" />
+								<img src="laptop-png-grey.png" class="h-[60vw] mt-[7vw] lg:mt-[unset] md:mt-0 md:h-[30.8vw]" alt="" />
 							</div>
 						</div>
 					</div>
