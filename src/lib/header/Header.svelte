@@ -49,26 +49,6 @@
 		height: 3em;
 	}
 
-	.corner a {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		width: max-content;
-		color: var(--heading-color);
-		font-size: 1.5rem;
-		height: 100%;
-		font-weight: 700;
-		text-decoration: none;
-		transition: color 0.2s linear;
-
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
 
 	nav {
 		display: flex;
@@ -77,16 +57,6 @@
 		width: 91%;
 		z-index: 200;
 		position: absolute;
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
 	}
 
 	ul {
