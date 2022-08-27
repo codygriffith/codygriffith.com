@@ -36,16 +36,7 @@
 <section class="main" id="myWork" use:scrollRef={"myWork"}>
 	<h1 class="title text-lg  md:text-2xl mt-8 mb-4">My Projects</h1>
 	<Scroller {top} {threshold} {bottom} bind:count bind:index bind:offset bind:progress>
-		<!-- <div slot="background">
-			<p>current section: <strong>{index + 1}/{count}</strong></p>
-			<progress value={count ? (index + 1) / count : 0} />
-
-			<p>offset in current section</p>
-			<progress value={offset || 0} />
-
-			<p>total progress</p>
-			<progress value={progress || 0} />
-		</div> -->
+		
 
 		<div slot="foreground">
 			{#each items as item, i}
@@ -164,13 +155,7 @@
 	}
 
 	.main .title {
-		/* background-color: black; */
 		padding-bottom: 0.5vw;
-	}
-
-	[slot="background"] {
-		border: none !important;
-		background: none !important;
 	}
 
 	.desktop_render {
@@ -190,24 +175,15 @@
 	}
 
 	.textual {
-		/* position: absolute; */
 		left: 0;
 	}
 
 	.textual h1 {
-		/* font-size: 2vw; */
 		margin-block-start: 0;
 		margin-block-end: 0;
 	}
 
-	.desktop_render img {
-		/* position: absolute; */
-		/* justify-self: center; */
-	}
-
 	.desktop_render iframe {
-		/* margin-top: -10vw; */
-		/* margin-right: -10.7vw; */
 		z-index: 200;
 		position: absolute;
 	}
@@ -227,10 +203,6 @@
 		width: 100%;
 	}
 
-	:global(svelte-scroller-background-container) {
-		/* z-index: 100 !important; */
-	}
-
 	:global(svelte-scroller-background) {
 		height: 80vh !important;
 		display: flex !important;
@@ -238,7 +210,6 @@
 	}
 
 	.main {
-		/* background-color: rgba(0, 0, 0, 0.705); */
 		background-color: #101011d8;
 		z-index: 100;
 		padding-top: 2.25vw;
@@ -247,81 +218,9 @@
 	h1 {
 		width: 100%;
 	}
-	.particles_layer1 {
-		position: absolute;
-		z-index: 100;
-		opacity: 0.2;
-	}
-
-	.welcome {
-		display: block;
-		/* position: relative; */
-		/* width: 100%; */
-		padding-top: 5%;
-		height: 100vh;
-		padding-top: 2.5vw;
-		display: flex;
-		flex-direction: column;
-		width: 80%;
-		justify-content: center;
-		/* padding: 0 0 calc(100% * 495 / 2048) 0; */
-	}
-
-	.welcome img {
-		position: absolute;
-		/* width: 100%; */
-		height: 80%;
-		/* top: 0; */
-		bottom: 0;
-		right: 10%;
-		/* margin-top: 10%; */
-		display: block;
-		z-index: 10;
-	}
-
-	.welcome h2 {
-		font-size: 3vw;
-		margin-block-end: 0;
-	}
-
-	.welcome p {
-		margin-left: 0.25vw;
-	}
-
-	.welcome video {
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -10;
-		height: 100vh;
-	}
-
-	.demo {
-		padding: 0 100px 0 0;
-	}
-
-	[slot="background"] {
-		/* background-color: rgba(255,62,0,0.05); */
-		border-top: 2px solid #ff3e00;
-		border-bottom: 2px solid #ff3e00;
-		font-size: 1.4em;
-		overflow: hidden;
-		padding: 1em;
-		/* z-index: 100; */
-	}
-
-	[slot="background"] p {
-		margin: 0;
-		/* z-index: 100; */
-	}
 
 	[slot="foreground"] {
 		pointer-events: none;
-	}
-
-	[slot="foreground"] .textual {
-		/* pointer-events: none; */
-		/* width: 100%; */
 	}
 
 	[slot="foreground"] iframe {
@@ -338,7 +237,6 @@
 	}
 
 	section {
-		/* height: 80vh; */
 		color: white;
 		padding: 1em;
 		margin: 0 0 2em 0;
