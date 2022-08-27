@@ -21,7 +21,7 @@
 
 <div class="w-full h-full">
 
-<iframe src="resume.pdf" width="100%" height="100%" class="frame"></iframe>
+<iframe title="Resume for Cody Griffith" src="resume.pdf" width="100%" height="100%" class="frame"></iframe>
 
 <footer></footer>
 
