@@ -160,14 +160,14 @@
 
 	.desktop_render {
 		width: 100%;
-		justify-content: end;
+		justify-content: flex-end;
 		display: flex;
 		height: 100%;
 		align-items: center;
 	}
 
 	.mobile_render {
-		justify-content: end;
+		justify-content: flex-end;
 		position: absolute;
 		display: flex;
 		width: 100%;
