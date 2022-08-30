@@ -214,23 +214,6 @@
 		width: 100%;
 	}
 
-	[slot="foreground"] {
-		pointer-events: none;
-	}
-
-	[slot="foreground"] iframe {
-		background-color: white;
-	}
-
-	[slot="foreground"] section {
-		pointer-events: all;
-		background: #1c1c1c23;
-	}
-
-	[slot="foreground"] h1 {
-		width: fit-content;
-	}
-
 	section {
 		color: white;
 		padding: 1em;
