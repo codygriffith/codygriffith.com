@@ -5,7 +5,6 @@
 
   import { onDestroy, onMount } from "svelte";
 
-  import Counter from "$lib/Counter.svelte";
   import particlesConfig from "$lib/particlesConfig.json";
   import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
