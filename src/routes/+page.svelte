@@ -1,9 +1,7 @@
-<script context="module" lang="ts">
-  export const prerender = true;
-</script>
+
 
 <script lang="ts">
-  import MyWork from "./MyWork.svelte";
+  import MyWork from "$lib/MyWork.svelte";
 
   import { onDestroy, onMount } from "svelte";
 
@@ -12,8 +10,9 @@
   import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
   import { scale } from "svelte/transition";
+  import type { Engine } from "tsparticles-engine";
 
-  let particlesInit = async (engine) => {
+  let particlesInit = async (engine: Engine) => {
     // you can use main to customize the tsParticles instance adding presets or custom shapes
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
