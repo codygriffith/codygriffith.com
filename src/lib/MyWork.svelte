@@ -1,9 +1,4 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
-	import Scroller from "@sveltejs/svelte-scroller";
 	import { slide } from "svelte/transition";
 
 	let count = 0;
@@ -35,10 +30,10 @@
 
 <section class="main" id="myWork" use:scrollRef={"myWork"}>
 	<h1 class="title text-lg  md:text-2xl mt-8 mb-4">My Projects</h1>
-	<Scroller {top} {threshold} {bottom} bind:count bind:index bind:offset bind:progress>
+	<!-- <Scroller {top} {threshold} {bottom} bind:count bind:index bind:offset bind:progress> -->
 		
 
-		<div slot="foreground">
+		<div>
 			{#each items as item, i}
 				<!-- content here -->
 				<section class="flex md:flex-col justify-center relative">
@@ -146,7 +141,7 @@
 				</section>
 			{/each}
 		</div>
-	</Scroller>
+	<!-- </Scroller> -->
 </section>
 
 <style>
