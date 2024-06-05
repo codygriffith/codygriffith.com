@@ -1,11 +1,10 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import { page } from "$app/stores";
+	import logo from "./svelte-logo.svg";
 </script>
 
-<header class:fixed={$page.url.pathname != '/resume'}>
-
-	<nav>
+<header class:fixed={$page.url.pathname != "/resume"}>
+	<nav class="text-white">
 		<div>
 			<a href="/" class="text-xl font-bold">
 				<!-- <img src={logo} alt="SvelteKit" /> -->
@@ -21,11 +20,13 @@
 				<!-- <li class:active={$page.url.pathname === '/todos'}>
 					<a sveltekit:prefetch href="/todos">Todos</a>
 				</li> -->
-				<li class:active={$page.url.pathname === '/resume'} class="font-semibold">
-					<a sveltekit:prefetch href="/resume">Resume</a>
+				<li
+					class:active={$page.url.pathname === "/resume"}
+					class="font-semibold"
+				>
+					<a href="/resume">Resume</a>
 				</li>
 			</ul>
-			
 		</div>
 	</nav>
 
@@ -48,7 +49,6 @@
 		width: 3em;
 		height: 3em;
 	}
-
 
 	nav {
 		display: flex;
@@ -80,7 +80,7 @@
 
 	li.active::before {
 		--size: 1px;
-		content: '';
+		content: "";
 		width: 95%;
 		height: 0;
 		position: absolute;
