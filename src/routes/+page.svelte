@@ -19,7 +19,6 @@
 
 <svelte:head>
     <title>Cody Griffith | Web Developer</title>
-    <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <Particles
