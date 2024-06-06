@@ -1,51 +1,20 @@
 <script lang="ts">
     import MyWork from "$lib/MyWork.svelte";
 
-    import { onDestroy, onMount } from "svelte";
-    import { scrollTo, scrollRef, scrollTop } from "svelte-scrolling";
+    import { scrollTo } from "svelte-scrolling";
 
     import particlesConfig from "$lib/particlesConfig.json";
 
-    // let particlesConfig = {
-    //     particles: {
-    //         color: {
-    //             value: "#000",
-    //         },
-    //         links: {
-    //             enable: true,
-    //             color: "#000",
-    //         },
-    //         move: {
-    //             enable: true,
-    //         },
-    //         number: {
-    //             value: 100,
-    //         },
-    //     },
-    // };
-
     import Particles, { particlesInit } from "@tsparticles/svelte";
     import { loadSlim } from "@tsparticles/slim";
-    import { scale } from "svelte/transition";
-    // import type { Engine } from "tsparticles-engine";
 
     let onParticlesLoaded = (event: { detail: { particles: any } }) => {
         const particlesContainer = event.detail.particles;
-
-        // you can use particlesContainer to call all the Container class
-        // (from the core library) methods like play, pause, refresh, start, stop
     };
 
     void particlesInit(async (engine) => {
-        // call this once per app
-        // you can use main to customize the tsParticles instance adding presets or custom shapes
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
         await loadSlim(engine);
     });
-
-    // import { scrollTo, scrollRef, scrollTop } from "svelte-scrolling";
 </script>
 
 <svelte:head>
@@ -135,10 +104,8 @@
             </a>
         </div>
     </div>
-    <!-- {#if show} -->
-
     <span
-        class="inline-block animate-bounce rounded-full p-4 text-white text-sm absolute bottom-0"
+        class="inline-block animate-bounce rounded-full p-4 text-sm absolute bottom-0"
     >
         <!-- svelte-ignore a11y-missing-attribute -->
         <a
