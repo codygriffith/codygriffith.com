@@ -1,5 +1,6 @@
 <script lang="ts">
     import MyWork from "$lib/MyWork.svelte";
+    import headshot from "$lib/assets/hopeful_headshot.png";
 
     import { scrollTo } from "svelte-scrolling";
 
@@ -33,11 +34,7 @@
     <div
         class="welcome flex h-full flex-col justify-center py-12 md:py-0 self-start w-7/12 lg:w-3/5 pt-[20vw] pr-6 ml-4 lg:ml-16 mb-[-5vw] md:mb-0"
     >
-        <img
-            src="hopeful_headshot.png"
-            alt="Welcome"
-            class="absolute w-8/12 md:w-[44vw] md:mb-[-12vw] lg:mb-0 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10"
-        />
+        <img src={headshot} alt="Headshot of Cody Griffith" class="absolute w-8/12 md:w-[44vw] md:mb-[-12vw] lg:mb-0 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
         <!-- <Counter /> -->
         <h2 class="text-2xl mb-2 md:text-4xl lg:text-6xl md:mb-6">
