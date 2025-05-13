@@ -17,7 +17,7 @@
 			tags: ["cloudflare", "stripe", "tailwindcss", "svelte"] },
 		{
 			name: "Pathlight",
-			url: "https://pathlight.pages.dev",
+			url: "https://pathlight.dev",
 			repo: "https://github.com/codygriffith/pathlight",
 			summary:
 				"Pathlight is a public API for auditing web addresses with Google Lighthouse. Featuring a front end dashboard, you can initiate new audits and view past scans plus their full reports. Built using <a href='https://aws.amazon.com/lambda/'>AWS Lambda</a> and an <a href='https://aws.amazon.com/sqs/'>SQS based queue</a>, Pathlight is able to infinitely scale with user demand.",
