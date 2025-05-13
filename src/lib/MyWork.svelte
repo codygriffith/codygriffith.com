@@ -42,7 +42,7 @@
 					<div class="textual md:mt-8 w-full z-[100] lg:flex ">
 						<div class="lg:w-[55%]">
 							<a href="{item.url}">
-								<h1 class="text-3xl md:text-5xl">{item.name}</h1>
+								<h1 class="text-3xl md:text-5xl text-left">{item.name}</h1>
 							</a>
 
 							<p class="summary text-lg md:text-base lg:text-lg my-2 pr-6">{@html item.summary}</p>
