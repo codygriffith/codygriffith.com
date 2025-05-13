@@ -13,12 +13,13 @@
 		{ 
 			name: "Contidly", 
 			url: "https://contidly.com",
+			repo: "",
 			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a SaaS webapp that automates the work of choosing qualified leads and tracking interactions. Using the <a href='https://developers.google.com/speed/docs/insights/v5/get-started'>PageSpeed Insights API</a>, users are able to perform bulk audits on client websites and filter the results using selected options to leveragee that data into better marketing decisions.", 
 			tags: ["cloudflare", "stripe", "tailwindcss", "svelte"] },
 		{
 			name: "Pathlight",
 			url: "https://pathlight.dev",
-			repo: "https://github.com/codygriffith/pathlight",
+			repo: "",
 			summary:
 				"Pathlight is a public API for auditing web addresses with Google Lighthouse. Featuring a front end dashboard, you can initiate new audits and view past scans plus their full reports. Built using <a href='https://aws.amazon.com/lambda/'>AWS Lambda</a> and an <a href='https://aws.amazon.com/sqs/'>SQS based queue</a>, Pathlight is able to infinitely scale with user demand.",
 			tags: ["cloudflare", "tailwindcss", "svelte"],
