@@ -12,15 +12,18 @@ What this script does instead:
 
   1. Leaves the original artwork alone. The top bar, contact icons, WORK EXPERIENCE
      and EDUCATION sections are carried over untouched.
-  2. Redacts the PROJECT + SKILLS region, which REMOVES that text from the content
-     stream. Painting a white rectangle over it is not enough: the text would still
-     be in the page, so ATS parsers, screen readers and copy-paste would keep reading
-     the old content (and, for a while, both versions at once).
+  2. Redacts the PROJECTS heading and the PROJECT + SKILLS region, which REMOVES that
+     text from the content stream. Painting a white rectangle over it is not enough: the
+     text would still be in the page, so ATS parsers, screen readers and copy-paste
+     would keep reading the old content (and, for a while, both versions at once).
   3. Redraws that region from the text below with the same typeface, size, colours,
      indents and leading as the original, then merges the two.
 
-Because step 2 clears everything below REWRITE_TOP and step 3 redraws all of it, this
-script is repeatable: running it again on its own output is a no-op in effect.
+Because step 2 clears everything below REWRITE_TOP (plus the renamed heading) and step 3
+redraws all of it, the script is repeatable: re-running it on its own output produces the same
+document. The bytes will differ, though — PDF generation is not byte-deterministic — so expect
+a changed file, not a modified one, in version control. A re-run is only worth committing if
+the content changed.
 
 Geometry is measured from the original export (see get_drawings()/get_text("dict")
 coordinates), not guessed, so the PROJECT and SKILLS anchors land on the same y
@@ -85,8 +88,12 @@ PRESERVED_TEXT = [
     "https://codygriffith.com", "WORK EXPERIENCE", "Alenthea Design Co.",
     "Web Developer", "June 2020 - Present", "Freelance Web Designer",
     "August 2017", "EDUCATION", "Columbus State University",
-    "Bachelor of Science in Computer Science", "December 2019", "PROJECT", "SKILLS",
+    "Bachelor of Science in Computer Science", "December 2019", "PROJECTS", "SKILLS",
 ]
+
+# Section headings are matched as whole lines, so "PROJECTS" cannot be satisfied by a
+# leftover "PROJECT" (which is a substring of it) and vice versa.
+SECTION_HEADINGS = {"PROJECTS": True, "PROJECT": False}
 
 # Must never appear in the output: dead projects and superseded claims.
 STALE_TEXT = ["Contidly", "contidly.com", "AWS Lambda", "CRM for web agencies"]
@@ -117,6 +124,12 @@ HEAD_TO_ROW = 19.2          # heading -> first skills row
 FIRST_LINE_TOP = 472.9      # first project name
 REWRITE_TOP = 466.0         # everything below this line is cleared and redrawn
 BOTTOM_LIMIT = 774.0        # last baseline must stay above this
+
+# The existing heading is part of the artwork above REWRITE_TOP, so it has to be redacted
+# and redrawn on its own. PROJECT_HEADING_TOP is its measured bbox top; the clear box
+# starts at x=95 so it cannot touch the section's marker bar (x 60-90).
+PROJECT_HEADING_TOP = 452.2
+PROJECT_HEADING_CLEAR = (95.0, 446.0, 260.0, REWRITE_TOP)
 
 REPO = Path(__file__).resolve().parents[1]
 PDF = REPO / "static" / "resume.pdf"
@@ -194,7 +207,12 @@ def build_overlay(path: Path) -> tuple[float, int]:
     canvas_ = canvas.Canvas(str(path), pagesize=(PAGE_W, PAGE_H))
     canvas_.setTitle("Cody Griffith - Resume")
 
-    # Clear the region being redrawn (the PROJECT heading itself sits above it).
+    # Renamed section heading, drawn in the gap above the cleared region.
+    canvas_.setFont("Lato-Bold", SIZE)
+    canvas_.setFillColor(INK)
+    canvas_.drawString(HEADING_X, baseline(PROJECT_HEADING_TOP), "PROJECTS")
+
+    # Clear the region being redrawn (the heading sits above it).
     canvas_.setFillColor(HexColor("#FFFFFF"))
     canvas_.rect(55.0, 0.0, 502.0, PAGE_H - REWRITE_TOP, stroke=0, fill=1)
 
@@ -272,6 +290,19 @@ def verify(path: Path, expected: dict[str, float]) -> list[str]:
     problems += [f"stale text still present: {t!r}" for t in STALE_TEXT if t in text]
     problems += [f"lost untouched text: {t!r}" for t in PRESERVED_TEXT if t not in text]
 
+    lines = [
+        "".join(span["text"] for span in line["spans"]).strip()
+        for block in doc[0].get_text("dict")["blocks"]
+        for line in block.get("lines", [])
+    ]
+    for heading, wanted in SECTION_HEADINGS.items():
+        present = heading in lines
+        if present != wanted:
+            problems.append(
+                f"section heading {heading!r} is {'present' if present else 'missing'} "
+                f"but should be {'present' if wanted else 'missing'}"
+            )
+
     def top_of(snippet: str) -> float | None:
         for block in doc[0].get_text("dict")["blocks"]:
             for line in block.get("lines", []):
@@ -300,10 +331,12 @@ def main() -> int:
         marker_top, lines_used = build_overlay(overlay)
         heading_top = round(marker_top - BAR_TO_HEAD, 1)
 
-        # Remove the old copy from the content stream rather than hiding it.
+        # Remove the old copy from the content stream rather than hiding it: the drawn
+        # region below, plus the old section heading, which is renamed.
         doc = pymupdf.open(PDF)
         page = doc[0]
         page.add_redact_annot(pymupdf.Rect(55.0, REWRITE_TOP, 557.0, PAGE_H))
+        page.add_redact_annot(pymupdf.Rect(*PROJECT_HEADING_CLEAR))
         page.apply_redactions()
         doc.save(redacted)
         doc.close()
@@ -319,6 +352,7 @@ def main() -> int:
         problems = verify(
             output,
             {
+                "PROJECTS": PROJECT_HEADING_TOP,
                 PROJECTS[0][0].split(" |")[0] + " |": FIRST_LINE_TOP,
                 "SKILLS": heading_top,
             },
