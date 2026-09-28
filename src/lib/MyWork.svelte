@@ -11,20 +11,36 @@
 
 	let items = [
 		{ 
-			name: "Contidly", 
-			url: "https://contidly.com",
+			name: "Cull-Pro", 
+			url: "https://cull-pro.com",
 			repo: "",
-			summary: "A lightweight CRM built with Web Developers in mind - Contidly is a SaaS webapp that automates the work of choosing qualified leads and tracking interactions. Using the <a href='https://developers.google.com/speed/docs/insights/v5/get-started'>PageSpeed Insights API</a>, users are able to perform bulk audits on client websites and filter the results using selected options to leveragee that data into better marketing decisions.", 
-			tags: ["cloudflare", "stripe", "tailwindcss", "svelte"] },
+			summary: "A browser-based culling and delivery workspace for photographers - import a whole shoot, keep or reject each frame with a single keystroke, make non-destructive edits, then hand the winners to clients as a private gallery link. 40+ camera RAW formats decode at full resolution on the user's own machine, using <a href='https://www.libraw.org/'>LibRaw</a> compiled to WebAssembly inside a background worker, so there is nothing to install. Built with Next.js and React on <a href='https://developers.cloudflare.com/workers/'>Cloudflare Workers</a>, with Supabase for accounts, Stripe for billing and S3-compatible object storage for the originals.", 
+			tags: ["nextjs", "react", "cloudflare", "supabase", "stripe", "tailwindcss"] },
 		{
 			name: "Pathlight",
 			url: "https://pathlight.dev",
 			repo: "",
 			summary:
-				"Pathlight is a public API for auditing web addresses with Google Lighthouse. Featuring a front end dashboard, you can initiate new audits and view past scans plus their full reports. Built using <a href='https://aws.amazon.com/lambda/'>AWS Lambda</a> and an <a href='https://aws.amazon.com/sqs/'>SQS based queue</a>, Pathlight is able to infinitely scale with user demand.",
-			tags: ["cloudflare", "tailwindcss", "svelte"],
+				"Pathlight is a free website audit tool powered by <a href='https://developer.chrome.com/docs/lighthouse/overview'>Google Lighthouse</a> - enter a URL and get performance, Core Web Vitals, technical SEO, accessibility and best-practices results, each with developer-friendly instructions for fixing it. Every audit gets a permanent report URL that can be shared, emailed straight to a client, or embedded on any site as an SVG badge, and the site doubles as an SEO resource library of guides, benchmarks and glossary entries. Built as a prerendered React app served from <a href='https://developers.cloudflare.com/workers/'>Cloudflare Workers</a>, with Cloudflare Email Sending delivering the shared reports.",
+			tags: ["react", "cloudflare", "supabase", "tailwindcss"],
 		},
 	];
+
+	// Mockup geometry, measured from the artwork in static/ (screen cutouts as fractions
+	// of each image). Each iframe gets a real device viewport and is then scaled down onto
+	// the cutout. Before this, the iframe's own width *was* the viewport, so the embedded
+	// site laid itself out for a ~170px-wide screen and its mobile hero rendered clipped
+	// and oversized; and because that width was in vw while the scale was a fixed 0.59,
+	// the effective device width drifted with the browser window.
+	const PHONE_VIEWPORT = { w: 390, h: 693 }; // cutout aspect 0.563
+	const DESKTOP_VIEWPORT = { w: 1440, h: 810 }; // cutout aspect 1.779
+	const PHONE_SCREEN = { left: 0.0524, top: 0.0964, width: 0.8967 };
+	const LAPTOP_SCREEN = { left: 0.1243, top: 0.046, width: 0.7515 };
+
+	// Overwritten by bind:clientWidth once mounted; the seeds are the widths the mockups
+	// render at on a typical desktop, so the first paint is already in the right place.
+	let phoneW = items.map(() => 111);
+	let laptopW = items.map(() => 488);
 
 	import { scrollTo, scrollRef, scrollTop } from "svelte-scrolling";
 </script>
@@ -62,7 +78,26 @@
 										</a>
 										<!-- content here -->
 									{/if}
-									<!-- {#if item.tags.includes("stripe")}
+
+									{#if item.tags.includes("nextjs")}
+										<a href="https://nextjs.org/" class="hover:transform scale-120 flex items-center mr-4" target="_blank">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" height="2.25rem" width="2.25rem" fill="#ffffff" aria-hidden="true"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></svg>
+										</a>
+									{/if}
+
+									{#if item.tags.includes("react")}
+										<a href="https://react.dev/" class="hover:transform scale-120 flex items-center mr-4" target="_blank">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" height="2.25rem" width="2.25rem" fill="#61DAFB" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg>
+										</a>
+									{/if}
+
+									{#if item.tags.includes("supabase")}
+										<a href="https://supabase.com/" class="hover:transform scale-120 flex items-center mr-4" target="_blank">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" height="2.25rem" width="2.25rem" fill="#3ECF8E" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg>
+										</a>
+									{/if}
+
+									{#if item.tags.includes("stripe")}
 										<a href="https://stripe.com/" class="hover:transform scale-120 mr-4" target="_blank">
 											<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="white" style="color:white" height="3rem" width="3rem" xmlns="http://www.w3.org/2000/svg">
 												<path
@@ -70,7 +105,7 @@
 												/>
 											</svg>
 										</a>
-									{/if} -->
+									{/if}
 
 									{#if item.tags.includes("tailwindcss")}
 										<a href="https://tailwindcss.com/" class="hover:transform scale-120 flex items-center mr-4" target="_blank">
@@ -124,12 +159,24 @@
 						<!-- content here -->
 						<div class="relative">
 							<div class="mobile_render md:mt-[3.5%] md:ml-[6vw]">
-								<iframe title="Mobile version of {item.url}" class="md:h-[26.75vw] md:w-[14.75vw] mt-[9vw] h-[63.5vw] w-[34.9vw] mr-[-5.75vw] md:mt-[2.2vw] md:mr-[5.45vw]" src={item.url} style="-webkit-transform:scale(0.59);-moz-transform-scale(0.59);" />
-								<img src="phone.png" class="w-[23vw] mt-[18vw] md:w-[9.65vw] md:mr-[8vw] md:mt-[6vw]" alt="" />
+								<div class="mockup mt-[18vw] w-[23vw] md:mt-[6vw] md:mr-[8vw] md:w-[9.65vw]" bind:clientWidth={phoneW[i]}>
+									<img src="phone.png" alt="" />
+									<iframe
+										title="Mobile version of {item.url}"
+										src={item.url}
+										style="width: {PHONE_VIEWPORT.w}px; height: {PHONE_VIEWPORT.h}px; left: {PHONE_SCREEN.left * 100}%; top: {PHONE_SCREEN.top * 100}%; transform: scale({(phoneW[i] * PHONE_SCREEN.width) / PHONE_VIEWPORT.w});"
+									/>
+								</div>
 							</div>
 							<div class="desktop_render md:mr-[15%] mt-0">
-								<iframe title="Desktop version of {item.url}" class="md:mt-[-10vw] md:mr-[-11vw] md:w-[64.75vw] md:h-[36.5vw] mt-[-12vw] mr-[-21vw] h-[71.5vw] w-[125vw]" src={item.url} style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);" />
-								<img src="laptop-png-grey.png" class="h-[60vw] mt-[7vw] lg:mt-[unset] md:mt-0 md:h-[30.8vw]" alt="" />
+								<div class="mockup mt-[7vw] w-[83.25vw] md:mt-0 md:w-[42.735vw] lg:mt-[unset]" bind:clientWidth={laptopW[i]}>
+									<img src="laptop-png-grey.png" alt="" />
+									<iframe
+										title="Desktop version of {item.url}"
+										src={item.url}
+										style="width: {DESKTOP_VIEWPORT.w}px; height: {DESKTOP_VIEWPORT.h}px; left: {LAPTOP_SCREEN.left * 100}%; top: {LAPTOP_SCREEN.top * 100}%; transform: scale({(laptopW[i] * LAPTOP_SCREEN.width) / DESKTOP_VIEWPORT.w});"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -183,15 +230,42 @@
 		position: absolute;
 	}
 
-	.mobile_render img {
-		position: absolute;
+	/* A mockup is a wrapper sized by the artwork, with the iframe placed on the screen
+	   cutout and scaled from a real device viewport down to that cutout. The artwork sits
+	   above the iframe so its rounded screen corners mask the iframe's square ones.
+	   `height: fit-content` keeps the wrapper exactly the image's height: inside the
+	   phone's flex container it would otherwise be stretched, and the iframe's `top`
+	   percentage would then be measured against a taller box and sit too low. */
+	.mockup {
+		position: relative;
+		display: block;
+		height: fit-content;
+	}
 
+	.mockup img {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
 		z-index: 220;
 	}
 
-	.mobile_render iframe {
+	.mockup iframe {
+		position: absolute;
+		transform-origin: top left;
+		border: 0;
+		z-index: 210;
+	}
+
+	/* The phone mockup overlaps the laptop's right edge and has to sit in front of it,
+	   artwork included — otherwise the laptop covers the phone entirely, since the
+	   desktop block comes later in the DOM and the two would otherwise tie. */
+	.mobile_render .mockup iframe {
 		z-index: 230;
-		border: none !important;
+	}
+
+	.mobile_render .mockup img {
+		z-index: 240;
 	}
 
 	:global(svelte-scroller-outer) {

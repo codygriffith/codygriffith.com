@@ -45,8 +45,10 @@
             I am a front end web developer with 7 years of experience
             freelancing for small to medium businesses and at this point i'm
             looking to move to more of a development focused role. Recently, I
-            have been working on a full-stack saas app called Contidly - a tool
-            for tracking and automatically qualifying potential clients.
+            have been working on a full-stack saas app called Cull-Pro - a
+            browser-based tool that lets photographers cull and edit RAW photos
+            and deliver client galleries, built with Next.js, React and
+            Cloudflare Workers.
         </p>
 
         <div class="flex">

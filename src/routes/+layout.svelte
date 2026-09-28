@@ -14,7 +14,7 @@
 {#if !($page.url.pathname === '/resume')}
 	<footer>
 		<!-- content here -->
-		<p>©2025 Cody Griffith</p>
+		<p>©{new Date().getFullYear()} Cody Griffith</p>
 	</footer>
 {/if}
 

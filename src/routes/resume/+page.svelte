@@ -1,6 +1,9 @@
 <svelte:head>
 	<title>Cody Griffith | Resume</title>
-	<meta name="description" content="About this app" />
+	<meta
+		name="description"
+		content="Resume of Cody Griffith, front end web developer in Columbus, GA — full-stack JavaScript and TypeScript, SvelteKit, React and Cloudflare Workers."
+	/>
 </svelte:head>
 
 <div class="w-full h-full">
