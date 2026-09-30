@@ -9,9 +9,11 @@
     import Particles, { particlesInit } from "@tsparticles/svelte";
     import { loadSlim } from "@tsparticles/slim";
 
-    let onParticlesLoaded = (event: { detail: { particles: any } }) => {
-        const particlesContainer = event.detail.particles;
-    };
+    // Exported from the tsParticles editor as plain JSON, so some string-literal unions in it
+    // (backgroundMask.composite, and others) widen to `string` and stop matching the engine's
+    // IOptions type. The values are valid at runtime, so the cast is here rather than the whole
+    // config being retyped.
+    const options = particlesConfig as any;
 
     void particlesInit(async (engine) => {
         await loadSlim(engine);
@@ -19,16 +21,10 @@
 </script>
 
 <svelte:head>
-    <title>Cody Griffith | Web Developer</title>
+	<title>Cody Griffith | Web Developer</title>
 </svelte:head>
 
-<Particles
-    id="tsparticles"
-    class=""
-    style=""
-    options={particlesConfig}
-    on:particlesLoaded={onParticlesLoaded}
-/>
+<Particles id="tsparticles" options={options} />
 
 <section class="relative flex flex-col items-center md:h-[100vh] lg:h-[100vh]">
     <div

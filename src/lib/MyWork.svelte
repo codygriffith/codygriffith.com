@@ -56,14 +56,14 @@
 				<section class="flex md:flex-col justify-center relative">
 					<!-- {#if i <= index && count != 0} -->
 					<div class="textual md:mt-8 w-full z-[100] lg:flex ">
-						<div class="lg:w-[55%]">
+						<div class="copy lg:w-[55%]">
 							<a href="{item.url}">
 								<h1 class="text-3xl md:text-5xl text-left">{item.name}</h1>
 							</a>
 
 							<p class="summary text-lg md:text-base lg:text-lg my-2 pr-6">{@html item.summary}</p>
 
-							<div class="w-auto flex-col md:flex-row flex mt-5">
+							<div class="links w-auto flex-col md:flex-row flex mt-5">
 								<div class="w-auto flex">
 									<!-- Netlify -->
 									<!-- {item.tags[0]} -->
@@ -218,6 +218,26 @@
 
 	.textual {
 		left: 0;
+	}
+
+	/* Below lg the copy and the mockups share one column instead of sitting side by side,
+	   and the mockups have to come before the tag/link row, so the copy wrapper is
+	   dissolved with `display: contents` and its heading, summary and link row become
+	   flex items of .textual that can be ordered after the mockups. At lg the wrapper is
+	   a real 55% column again and the original two-column layout is untouched. */
+	@media (max-width: 1023px) {
+		.textual {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.copy {
+			display: contents;
+		}
+
+		.links {
+			order: 1;
+		}
 	}
 
 	.textual h1 {
