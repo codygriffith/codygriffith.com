@@ -1,25 +1,14 @@
 <script>
 	import { page } from "$app/stores";
-	import logo from "./svelte-logo.svg";
 </script>
 
 <header class:fixed={$page.url.pathname != "/resume"}>
 	<nav class="text-white">
 		<div>
-			<a href="/" class="text-xl font-bold">
-				<!-- <img src={logo} alt="SvelteKit" /> -->
-				Cody Griffith
-			</a>
+			<a href="/" class="text-xl font-bold">Cody Griffith</a>
 		</div>
 		<div>
 			<ul>
-				<!-- <li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li> -->
-				<!-- <li class:active={$page.url.pathname === '/about'}>
-					<a sveltekit:prefetch href="/about">About</a>
-				</li> -->
-				<!-- <li class:active={$page.url.pathname === '/todos'}>
-					<a sveltekit:prefetch href="/todos">Todos</a>
-				</li> -->
 				<li
 					class:active={$page.url.pathname === "/resume"}
 					class="font-semibold"
@@ -40,7 +29,6 @@
 		display: flex;
 		justify-content: center;
 		background-color: black;
-		/* position: fixed; */
 		width: 100%;
 		z-index: 200;
 	}
@@ -53,7 +41,6 @@
 	nav {
 		display: flex;
 		justify-content: space-between;
-		/* --background: black; */
 		width: 91%;
 		z-index: 200;
 		position: absolute;
@@ -68,8 +55,6 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
-		background-size: contain;
 	}
 
 	li {
@@ -79,15 +64,12 @@
 	}
 
 	li.active::before {
-		--size: 1px;
 		content: "";
 		width: 95%;
 		height: 0;
 		position: absolute;
 		top: 0;
-		/* left: calc(50% - var(--size)); */
-		/* border: var(--size) solid transparent; */
-		border: var(--size) solid var(--accent-color);
+		border: 1px solid var(--accent-color);
 	}
 
 	nav a {
@@ -95,11 +77,7 @@
 		flex-direction: row;
 		height: 100%;
 		align-items: center;
-		/* margin: 0 1em; */
 		color: var(--heading-color);
-		/* font-weight: 700; */
-		/* font-size: 1rem; */
-		/* text-transform: uppercase; */
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;

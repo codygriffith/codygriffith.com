@@ -11,9 +11,8 @@
 	<slot />
 </main>
 
-{#if !($page.url.pathname === '/resume')}
+{#if $page.url.pathname !== '/resume'}
 	<footer>
-		<!-- content here -->
 		<p>©{new Date().getFullYear()} Cody Griffith</p>
 	</footer>
 {/if}

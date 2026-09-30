@@ -32,12 +32,14 @@
     >
         <img src={headshot} alt="Headshot of Cody Griffith" class="absolute w-8/12 md:w-[44vw] md:mb-[-12vw] lg:mb-0 mr-[-18vw] md:mr-0 lg:w-4/12 bottom-0 right-[1vw] lg:right-[5vw] z-10" />
 
-        <!-- <Counter /> -->
         <h2 class="text-2xl mb-2 md:text-4xl lg:text-6xl md:mb-6">
             Cody Griffith
         </h2>
 
-        <p class="text-[3.75vw] md:text-lg 2xl:text-xl ml-1 z-10">
+        <!-- Sized in vw (3.75vw) this dropped to 12px on a 320px phone; a fixed 14px is the
+             most the narrow hero column (7/12 wide, next to the portrait) can carry without
+             the copy running across the photo. -->
+        <p class="text-sm md:text-lg 2xl:text-xl ml-1 z-10">
             I am a front end web developer with 7 years of experience
             freelancing for small to medium businesses and at this point i'm
             looking to move to more of a development focused role. Recently, I
@@ -50,6 +52,8 @@
         <div class="flex">
             <a
                 target="_blank"
+                rel="noopener"
+                aria-label="GitHub profile"
                 class="mr-4 md:mr-8 my-4 w-6 md:w-8"
                 href="https://github.com/codygriffith"
             >
@@ -78,6 +82,8 @@
 
             <a
                 target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn profile"
                 class="mr-4 md:mr-8 my-4 w-6 md:w-8"
                 href="https://www.linkedin.com/in/codygriffith/"
             >
@@ -98,13 +104,11 @@
             </a>
         </div>
     </div>
-    <span
-        class="inline-block animate-bounce rounded-full p-4 text-sm absolute bottom-0"
-    >
-        <!-- svelte-ignore a11y-missing-attribute -->
+    <span class="inline-block animate-bounce absolute bottom-0">
         <a
+            href="#myWork"
+            aria-label="Scroll to my projects"
             use:scrollTo={{ ref: "myWork", duration: 1000 }}
-            class="animate_bounce"
         >
             <svg
                 class="w-6 h-6 text-gray-500"
@@ -119,8 +123,6 @@
             </svg>
         </a>
     </span>
-
-    <!-- {/if} -->
 </section>
 
 <MyWork />

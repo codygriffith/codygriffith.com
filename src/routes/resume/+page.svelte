@@ -6,30 +6,36 @@
 	/>
 </svelte:head>
 
-<div class="w-full h-full">
+<iframe title="Resume for Cody Griffith" src="resume.pdf" class="frame"></iframe>
 
-<iframe title="Resume for Cody Griffith" src="resume.pdf" width="100%" height="100%" class="frame"></iframe>
-
-<footer></footer>
-
-
-</div>
+<!-- Phone browsers only render the first page of an embedded PDF, so they get a link
+     to the file itself instead. -->
+<a class="open-pdf" href="resume.pdf" target="_blank" rel="noopener">
+	Open resume.pdf in a new tab
+</a>
 
 <style>
 	.frame {
-  display: block;
-  width: 100vw;
-  height: 95vh;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0 none;
-  box-sizing: border-box;
-}
+		display: block;
+		width: 100%;
+		height: 95vh;
+		margin: 0;
+		padding: 0;
+		border: 0 none;
+		box-sizing: border-box;
+	}
 
-/* :global(header) {
-    position: unset !important;
-} */
+	.open-pdf {
+		display: block;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	@media (min-width: 768px) {
+		.open-pdf {
+			display: none;
+		}
+	}
 </style>
 
 
